@@ -5,7 +5,7 @@
 <ul class="list-group">
   <% @articles.each do |article| %>
     <li class="list-group-item">
-      <%= link_to article.title, article %>
+      <%= link_to article.title, article %> <span class="text-muted">(<%= article.created_at.strftime("%F") %>)</span>
     </li>
   <% end %>
 </ul>
