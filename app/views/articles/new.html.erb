@@ -17,6 +17,18 @@
     <% end %>
   </div>
 
+  <div class="mb-3">
+    <div class="form-radio">
+        <%= radio_button_tag(:age, "child", class: "form-radio-input") %>
+<%= label_tag(:age_child, "I am younger than 21",  class: "form-radio-label") %>
+<%= radio_button_tag(:age, "adult", class: "form-radio-input") %>
+<%= label_tag(:age_adult, "I'm over 21", class: "form-radio-label") %>
+    </div>
+        <% @article.errors.full_messages_for(:age).each do |message| %>
+      <div class="alert alert-warning" role="alert"><%= message %></div>
+    <% end %>
+  </div>
+
   <div class="">
       <span class="mr-2">
         <%= form.submit class: "btn btn-primary" %>
